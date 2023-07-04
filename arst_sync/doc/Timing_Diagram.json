@@ -1,0 +1,17 @@
+{
+    signal: [
+        { name: "in_clk", wave: "p......"
+        },
+        { name: "in_areset_n", wave: "x0.1...", phase: 0.5, node: ".1.4"
+        },
+        { name: "reset_r", wave: "x1..0..", phase: 0.5, node: "x2..5."
+        },
+        { name: "reset_d1_r", wave: "x1...0.", phase: 0.5, node: "x3...6."
+        },
+        { name: "out_reset", wave: "x1...0.", phase: 0.5
+        }
+    ],
+        edge: [
+            '1~>2', '1~>3', '4~>5', '5~>6'
+    ]
+}
