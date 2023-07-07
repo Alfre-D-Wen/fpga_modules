@@ -1,3 +1,4 @@
 # Simulation File
 ./*.v
 sim/
+doc/
