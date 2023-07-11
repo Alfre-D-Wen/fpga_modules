@@ -101,7 +101,6 @@ module divider_tb;
                     .DIVIDER_WIDTH ( DIVIDER_WIDTH ))
                 u_divider_top (
                     .in_clk ( in_clk ),
-                    .in_reset ( reset ),
                     .in_data_valid ( in_data_valid ),
                     .in_dividend ( in_dividend [DIVIDEND_WIDTH - 1: 0] ),
                     .in_divider ( in_divider [DIVIDER_WIDTH - 1: 0] ),
