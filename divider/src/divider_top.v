@@ -22,11 +22,9 @@ module divider_top #(
         parameter DIVIDER_WIDTH = 8
     ) (
         input in_clk,
-        input in_reset,
         input in_data_valid,
         input [DIVIDEND_WIDTH - 1: 0] in_dividend,
         input [DIVIDER_WIDTH - 1: 0] in_divider,
-
         output out_data_valid,
         output [DIVIDEND_WIDTH - 1: 0] out_quotient,
         output [DIVIDER_WIDTH - 1: 0] out_remainder
@@ -64,7 +62,7 @@ module divider_top #(
     endgenerate
 
     //!输出有效信号
-    always @(posedge in_clk )
+    always @(posedge in_clk)
     begin
         if (in_data_valid)
         begin
