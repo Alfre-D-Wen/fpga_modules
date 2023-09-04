@@ -18,11 +18,10 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ns
-module step_synchorizer #(
-        //!同步器延时数，该值>=1
+module step_synchronizer #(
+        //! delay clocks>=1
         parameter DELAY_CYCLES = 2
     ) (
-        input in_clk_send,
         input in_data,
         input in_clk_receive,
         output out_data_delay
