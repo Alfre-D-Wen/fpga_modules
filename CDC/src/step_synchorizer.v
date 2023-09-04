@@ -1,21 +1,22 @@
-/************************************************************************
-*  File           : step_synchorizer.v
-*  Module Name    : step_synchorizer
-*  Revision       : 1.0
-*  Model          : 
-*
-*  Description    : 同步器，用于慢时钟域->快时钟域的单比特数据同步
-*   
-*           
-*            
-*  Designer       : Alfred Wen
-*  Create Date    : 2023.07.10
-*  Rev        Author        Date        Modification
-*  ---       ---------    ---------     ---------------     
-*
-*
-*
-************************************************************************/
+//////////////////////////////////////////////////////////////////////////////////
+// Company: Concemed
+// Engineer: Alfred Wen
+//
+// Create Date: 2023/08/04 13:49:21
+// Design Name: step_synchronizer.v
+// Module Name: 
+// Project Name: 
+// Target Devices: xcku060-ffva1156-2-i / xc7a35tcsg325-1
+// Tool Versions: Vivado 2021.1
+// Description:
+//
+// Dependencies:
+//
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+//
+//////////////////////////////////////////////////////////////////////////////////
 `timescale 1ns/1ns
 module step_synchorizer #(
         //!同步器延时数，该值>=1
