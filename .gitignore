@@ -2,3 +2,4 @@
 ./*.v
 sim/
 doc/
+/vivado_project
