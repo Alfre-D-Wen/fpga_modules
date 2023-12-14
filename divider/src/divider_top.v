@@ -1,21 +1,3 @@
-/************************************************************************
-*  File           : divider_top.v
-*  Module Name    : divider
-*  Revision       : 1.0
-*  Model          : 
-*
-*  Description    : ç”¨äºæ•´æ•°é—´è¿›è¡Œé™¤æ³•
-*   
-*           
-*            
-*  Designer       : Alfred Wen
-*  Create Date    : 2023.07.04
-*  Rev        Author        Date        Modification
-*  ---       ---------    ---------     ---------------     
-*
-*
-*
-************************************************************************/
 `timescale 1ns/1ns
 module divider_top #(
         parameter DIVIDEND_WIDTH = 8,
@@ -30,18 +12,18 @@ module divider_top #(
         output [DIVIDER_WIDTH - 1: 0] out_remainder
     );
 
-    //!å¯¹è¢«é™¤æ•°æ‰©ä½åˆ°2å€ä½å®½,ä¸€å…±ç”Ÿæˆ DIVIDEND_WIDTH - 1 ä¸ªä½å®½ä¸º
+    //!¶Ô±»³ıÊıÀ©Î»µ½2±¶Î»¿í,Ò»¹²Éú³É DIVIDEND_WIDTH - 1 ¸öÎ»¿íÎª
     wire [2 * DIVIDEND_WIDTH - 1: 0] dividend_expand_r [DIVIDEND_WIDTH : 0] ;
-    //!å¯¹é™¤æ•°æ‰©ä½åˆ°è¢«é™¤æ•°2å€ä½å®½
+    //!¶Ô³ıÊıÀ©Î»µ½±»³ıÊı2±¶Î»¿í
     wire [2 * DIVIDEND_WIDTH - 1: 0] divider_expand_r [DIVIDEND_WIDTH : 0] ;
-    //!å¯¹in_data_validè¿›è¡Œå»¶è¿Ÿ
+    //!¶Ôin_data_valid½øĞĞÑÓ³Ù
     reg [DIVIDEND_WIDTH - 1: 0] data_ready_delay_r;
 
-    //!å¯¹è¢«é™¤æ•°ï¼Œé™¤æ•°è¿›è¡Œæ‰©ä½
+    //!¶Ô±»³ıÊı£¬³ıÊı½øĞĞÀ©Î»
     assign dividend_expand_r[0] = {{DIVIDEND_WIDTH{1'b0}}, in_dividend};
     assign divider_expand_r[0] = {in_divider, {DIVIDEND_WIDTH{1'b0}}};
 
-    //!è¢«é™¤æ•°ç§»ä½æ¬¡æ•°è®¡æ•°å™¨
+    //!±»³ıÊıÒÆÎ»´ÎÊı¼ÆÊıÆ÷
     genvar shift_cnt;
     generate
         for (shift_cnt = 1; shift_cnt <= DIVIDEND_WIDTH; shift_cnt = shift_cnt + 1)
@@ -61,7 +43,7 @@ module divider_top #(
         end
     endgenerate
 
-    //!è¾“å‡ºæœ‰æ•ˆä¿¡å·
+    //!Êä³öÓĞĞ§ĞÅºÅ
     always @(posedge in_clk)
     begin
         if (in_data_valid)
