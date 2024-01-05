@@ -30,7 +30,7 @@ module bus_cdc_cmb
            input src_data_valid_in,
            input [DATA_WIDTH - 1:0] src_data_in,
 
-           output cdc_done_out, // indicate the cdc process is finished,valid in clk_src_in domain
+           output cdc_done_out, // indicate the cdc process is finished
            
            output dest_data_valid_out,
            output [DATA_WIDTH - 1:0] dest_data_out
